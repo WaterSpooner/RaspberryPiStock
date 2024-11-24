@@ -32,7 +32,7 @@ jobs:
       - name: Terraform Plan
         run: |
           terraform plan -out=tfplan \
-            -var "phone_number=${{ env.PHONE_NUMBER }}" \
+            -var "phone_number=${{ secrets.EMAIL }}" \
             -var "access_key=${{ secrets.ACCESS_KEY }}" \
             -var "secret_key=${{ secrets.SECRET_KEY }}" \
         working-directory: infrastructure

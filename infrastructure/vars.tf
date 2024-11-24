@@ -4,8 +4,8 @@ variable "schedule_interval" {
     default     = 60
 }
 
-variable "phone_number" {
-    description = "A list of phone numbers to subscribe to the SNS topic"
+variable "email" {
+    description = "An email address to send notifications to"
     type        = string
 }
 
@@ -20,13 +20,13 @@ variable "secret_key" {
 }
 
 variable "shop_region" {
-  description = "value"
+  description = "Country code for the shop"
   type        = string
   default     = "UK"
 }
 
 variable "pi_model" {
-  description = "value"
+  description = "The model of the Raspberry Pi"
   type        = string
   default     = "PI5"
 }
