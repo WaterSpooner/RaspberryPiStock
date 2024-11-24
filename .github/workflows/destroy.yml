@@ -2,7 +2,6 @@ name: Destroy infrastructure on aws
 
 on:
   workflow_dispatch:
-    branches: ["main"]
 
 jobs:
   destroy:
@@ -34,10 +33,7 @@ jobs:
       - name: Terraform Destroy
         run: |
           terraform destroy -auto-approve \
-            -var "schedule_interval=$(( ${{ env.SCHEDULE_INTERVAL }} + 0 ))" \
             -var "phone_number=${{ env.PHONE_NUMBER }}" \
             -var "access_key=${{ secrets.ACCESS_KEY }}" \
             -var "secret_key=${{ secrets.SECRET_KEY }}" \
-            -var "shop_region=${{ env.SHOP_REGION }}" \
-            -var "pi_model=${{ env.PI_MODEL }}"
         working-directory: infrastructure
