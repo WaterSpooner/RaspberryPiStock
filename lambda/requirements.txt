@@ -1,4 +1,2 @@
 feedparser
 boto3
-datetime
-os
