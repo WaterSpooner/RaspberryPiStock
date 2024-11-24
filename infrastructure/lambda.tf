@@ -38,6 +38,7 @@ resource "aws_lambda_function" "stock_notifier_lambda" {
       SNS_TOPIC_ARN = aws_sns_topic.stock_notifier_topic.arn
       PI_MODEL = var.pi_model
       SHOP_REGION = var.shop_region
+      RSS_FEED = var.rss_feed
     }
   }
 }

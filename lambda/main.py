@@ -35,7 +35,7 @@ def sendMessage(shops: list[str], model: str) -> None:
     link = formatLink(shops)
     shopsCSV = ", ".join(shops)
     message = f"{model} in stock at {shopsCSV}.\n{link}"
-    sns.publish(TopicArn=SNS_TOPIC_ARN, Message=message)
+    sns.publish(TopicArn=SNS_TOPIC_ARN, Message=message, Subject=f"{model} in stock!")
 
 def checkStock(rssFeed: str) -> list[str]:
     """

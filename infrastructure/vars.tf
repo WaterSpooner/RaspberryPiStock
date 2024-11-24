@@ -30,3 +30,9 @@ variable "pi_model" {
   type        = string
   default     = "PI5"
 }
+
+variable "rss_feed" {
+  description = "the RSS feed to monitor"
+  type        = string
+  default     = "https://rpilocator.com/feed/"
+}
