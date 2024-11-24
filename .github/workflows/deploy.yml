@@ -28,7 +28,7 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: terraform
+        working-directory: infrastructure
 
       - name: Terraform Plan
         run: |
@@ -39,8 +39,8 @@ jobs:
             -var "secret_key=${{ secrets.SECRET_KEY }}" \
             -var "shop_region=${{ env.SHOP_REGION }}" \
             -var "pi_model=${{ env.PI_MODEL }}"
-        working-directory: terraform
+        working-directory: infrastructure
 
       - name: Terraform Apply
         run: terraform apply -auto-approve tfplan
-        working-directory: terraform
+        working-directory: infrastructure
