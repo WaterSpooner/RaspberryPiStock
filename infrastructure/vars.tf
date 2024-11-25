@@ -9,16 +9,6 @@ variable "email" {
     type        = string
 }
 
-variable "access_key" {
-    description = "The AWS access key"
-    type        = string
-}
-
-variable "secret_key" {
-    description = "The AWS secret key"
-    type        = string
-}
-
 variable "shop_region" {
   description = "Country code for the shop"
   type        = string
