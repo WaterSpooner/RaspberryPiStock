@@ -18,7 +18,7 @@ This project uses an AWS lambda to track an RSS feed and provide updates on Rasp
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/RaspberryPiStock.git
+    git clone https://github.com/WaterSpooner/RaspberryPiStock.git
     cd RaspberryPiStock
     ```
 
