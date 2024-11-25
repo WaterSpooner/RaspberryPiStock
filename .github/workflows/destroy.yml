@@ -27,10 +27,16 @@ jobs:
         uses: hashicorp/setup-terraform@v2
 
       - name: Terraform Init
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY }}
         run: terraform init
         working-directory: infrastructure
 
       - name: Terraform Destroy
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY }}
         run: |
           terraform destroy -auto-approve \
             -var "email=${{ secrets.EMAIL }}" \

@@ -26,10 +26,16 @@ jobs:
         uses: hashicorp/setup-terraform@v2
 
       - name: Terraform Init
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY }}
         run: terraform init
         working-directory: infrastructure
 
       - name: Terraform Plan
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY }}
         run: |
           terraform plan -out=tfplan \
             -var "email=${{ secrets.EMAIL }}" \
@@ -38,5 +44,8 @@ jobs:
         working-directory: infrastructure
 
       - name: Terraform Apply
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY }}
         run: terraform apply -auto-approve tfplan
         working-directory: infrastructure
